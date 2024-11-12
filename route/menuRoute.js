@@ -13,6 +13,15 @@ route.get('/', async (req, res) => {
     }
 })
 
+route.get('/hi', async (req, res)=>{
+    try{
+        res.send('hi');
+    }catch(err){
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 route.post('/', async (req, res) => {
     try{
         const data = req.body;
